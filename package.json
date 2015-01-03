@@ -1,6 +1,6 @@
 {
   "name": "random-date",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Outputs a random date within a range.",
   "main": "server/index.js",
   "scripts": {
