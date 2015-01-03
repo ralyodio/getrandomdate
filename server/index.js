@@ -1,6 +1,9 @@
 var moment = require('moment');
-var express = require('express')
-var app = express()
+var express = require('express');
+var cors = require('cors');
+var app = express();
+
+app.use(cors());
 
 function getRandomInt (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
