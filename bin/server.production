@@ -1,0 +1,1 @@
+NODE_ENV=production forever start -l ~/log/getrandomdate.com.log -e ~/log/getrandomdate.com.error.log -a --sourceDir ~/www/getrandomdate.com server/index.js
