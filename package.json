@@ -16,5 +16,11 @@
     "express": "~4.10.6",
     "moment": "~2.8.4",
     "cors": "~2.5.2"
+  },
+  "devDependencies": {
+    "del": "^1.1.1",
+    "gulp": "^3.8.10",
+    "gulp-shell": "^0.2.11",
+    "gulp-util": "^3.0.1"
   }
 }
