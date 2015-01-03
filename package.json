@@ -1,0 +1,19 @@
+{
+  "name": "random-date",
+  "version": "1.0.0",
+  "description": "Outputs a random date within a range.",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "keywords": [
+    "random",
+    "date"
+  ],
+  "author": "Anthony Ettinger",
+  "license": "ISC",
+  "dependencies": {
+    "express": "~4.10.6",
+    "moment": "~2.8.4"
+  }
+}
