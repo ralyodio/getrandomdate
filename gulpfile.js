@@ -18,8 +18,8 @@ gulp.task('copy:dist', ['clean:dist', 'shrinkwrap'], function(){
     'npm-shrinkwrap.json',
     //'.bowerrc',
     //'bower.json',
-    'server/**/*'
-    //'bin/**/*',
+    'server/**/*',
+    'bin/**/*'
     //'client/views/**/*',
     //'client/public/**/*',
     //'!client/public/vendor/**', //work around for https://github.com/gulpjs/gulp/issues/165
