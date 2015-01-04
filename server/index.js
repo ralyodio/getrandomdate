@@ -51,6 +51,7 @@ app.get('/days-ago/:days', function(req, res) {
 app.get('/days-ago/:days/:format', function(req, res) {
   var days = parseInt(req.params.days);
   var field = req.params.format || 'unix';
+  var count = req.query.count || 1;
 
   //returns seconds
   var start = moment().unix();
@@ -58,14 +59,21 @@ app.get('/days-ago/:days/:format', function(req, res) {
   //needs ms as input
   var end = moment(start * 1000).subtract(days, 'd').unix();
 
-  //convert to ms for moment
-  var rand = getRandomInt(start, end) * 1000;
 
-  console.log('start: %d end: %d: rand: %d', start, end, rand);
+  var list = [];
 
-  var data = getDataFromDate(rand);
+  while ( count > 0 ) {
+    //convert to ms for moment
+    var rand = getRandomInt(start, end) * 1000;
+    var data = getDataFromDate(rand);
 
-  json2csv({data: data, fields: [field]}, function(err, csv) {
+    console.log('start: %d end: %d: rand: %d', start, end, rand);
+
+    list.push(data);
+    count--;
+  }
+
+  json2csv({data: list, fields: [field]}, function(err, csv) {
     if (err) console.log(err);
     res.send(csv);
   });
