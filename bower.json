@@ -1,0 +1,8 @@
+{
+  "name": "getrandomdate",
+  "version": "1.0.5",
+  "dependencies": {
+    "github-markdown-css": "~2.0.2"
+  },
+  "devDependencies": {}
+}

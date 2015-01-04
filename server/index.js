@@ -1,12 +1,19 @@
+'use strict';
+
 var moment = require('moment');
 var express = require('express');
-var cors = require('cors');
 var app = express();
 var json2csv = require('json2csv');
+var fs = require('fs');
+var path = require('path');
 
-app.use(cors());
+//application root
+app.set('root', path.resolve(__dirname, '..'));
 
-app.use(express.static('client/public'));
+app.use(express.static(app.get('root') + '/client/public'));
+require('./config/express')(app);
+//require('./routes')(app);
+
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -26,7 +33,11 @@ function getDataFromDate(rand) {
 }
 
 app.get('/', function(req, res){
-  res.redirect('/README.html');
+  var file = path.resolve(app.get('root'), 'client/public/docs/README.html');
+
+  fs.readFile(file, function(err, doc){
+    res.render('index', { doc: doc });
+  });
 });
 
 app.get('/days-ago/:days', function(req, res) {

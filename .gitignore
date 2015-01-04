@@ -1,5 +1,8 @@
-node_modules/
+node_modules
 *.swp
 .idea
 dist/
-client/public/README.html
+client/public/docs
+client/public/vendor
+client/public/*.css
+client/public/*.js

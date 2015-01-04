@@ -1,21 +1,36 @@
 var gulp = require('gulp');
-var gutil = require('gulp-util');
 var del = require('del');
-var fs = require('fs');
 var shell = require('gulp-shell');
 var markdown = require('gulp-markdown');
+var less = require('gulp-less');
+var watch = require('gulp-watch');
 
-
-gulp.task('default', ['build']);
+gulp.task('default', ['build', 'watch']);
 
 gulp.task('build', [
+  'less',
   'markdown'
 ]);
+
+gulp.task('watch', function(){
+  watch([
+    'client/styles/**/*.less',
+    'README.md'
+  ], function(){
+    gulp.start('build');
+  })
+});
+
+gulp.task('less', function(){
+  return gulp.src('./client/styles/style.less')
+    .pipe(less())
+    .pipe(gulp.dest('./client/public'));
+});
 
 gulp.task('markdown', function(){
   return gulp.src('README.md')
     .pipe(markdown())
-    .pipe(gulp.dest('client/public'));
+    .pipe(gulp.dest('client/public/docs'));
 });
 
 gulp.task('clean:dist', function(cb){
