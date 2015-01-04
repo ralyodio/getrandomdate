@@ -5,6 +5,8 @@ var app = express();
 
 app.use(cors());
 
+app.use(express.static('client/public'));
+
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -22,8 +24,8 @@ function getDataFromDate(rand) {
   };
 }
 
-app.get('/', function(req, res) {
-  //readme.md
+app.get('/', function(req, res){
+  res.redirect('/README.html');
 });
 
 app.get('/days-ago/:days', function(req, res) {

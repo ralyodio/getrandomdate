@@ -3,10 +3,20 @@ var gutil = require('gulp-util');
 var del = require('del');
 var fs = require('fs');
 var shell = require('gulp-shell');
+var markdown = require('gulp-markdown');
+
 
 gulp.task('default', ['build']);
 
-gulp.task('build', []);
+gulp.task('build', [
+  'markdown'
+]);
+
+gulp.task('markdown', function(){
+  return gulp.src('README.md')
+    .pipe(markdown())
+    .pipe(gulp.dest('client/public'));
+});
 
 gulp.task('clean:dist', function(cb){
   del(['dist/**/*', '!dist/.git/**', '!dist/.gitignore'], { dot: true }, cb);
@@ -19,9 +29,9 @@ gulp.task('copy:dist', ['clean:dist', 'shrinkwrap'], function(){
     //'.bowerrc',
     //'bower.json',
     'server/**/*',
-    'bin/**/*'
+    'bin/**/*',
     //'client/views/**/*',
-    //'client/public/**/*',
+    'client/public/**/*'
     //'!client/public/vendor/**', //work around for https://github.com/gulpjs/gulp/issues/165
     //'!client/public/sitemap.xml',
     //'common/**/*'

@@ -1,6 +1,6 @@
 {
   "name": "random-date",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "dependencies": {
     "cors": {
       "version": "2.5.2",
