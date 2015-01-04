@@ -32,3 +32,8 @@ Gets a random date from the last 90 seconds.
     GET /from/2010/to/2014
   
 Gets a random date between the two dates.
+
+
+## /days-ago/:days/:format
+
+    GET /days-ago/7/unix

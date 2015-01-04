@@ -13,9 +13,10 @@
   "author": "Anthony Ettinger",
   "license": "ISC",
   "dependencies": {
+    "cors": "~2.5.2",
     "express": "~4.10.6",
-    "moment": "~2.8.4",
-    "cors": "~2.5.2"
+    "json2csv": "^2.2.1",
+    "moment": "~2.8.4"
   },
   "devDependencies": {
     "del": "^1.1.1",

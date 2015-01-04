@@ -2,6 +2,7 @@ var moment = require('moment');
 var express = require('express');
 var cors = require('cors');
 var app = express();
+var json2csv = require('json2csv');
 
 app.use(cors());
 
@@ -45,6 +46,29 @@ app.get('/days-ago/:days', function(req, res) {
   var data = getDataFromDate(rand);
 
   res.send(data);
+});
+
+app.get('/days-ago/:days/:format', function(req, res) {
+  var days = parseInt(req.params.days);
+  var field = req.params.format || 'unix';
+
+  //returns seconds
+  var start = moment().unix();
+
+  //needs ms as input
+  var end = moment(start * 1000).subtract(days, 'd').unix();
+
+  //convert to ms for moment
+  var rand = getRandomInt(start, end) * 1000;
+
+  console.log('start: %d end: %d: rand: %d', start, end, rand);
+
+  var data = getDataFromDate(rand);
+
+  json2csv({data: data, fields: [field]}, function(err, csv) {
+    if (err) console.log(err);
+    res.send(csv);
+  });
 });
 
 var server = app.listen(3000, function() {
