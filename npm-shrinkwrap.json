@@ -1,6 +1,6 @@
 {
   "name": "random-date",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "dependencies": {
     "compression": {
       "version": "1.3.0",
@@ -84,6 +84,30 @@
         }
       }
     },
+    "easyxml": {
+      "version": "1.0.0",
+      "from": "easyxml@",
+      "resolved": "https://registry.npmjs.org/easyxml/-/easyxml-1.0.0.tgz",
+      "dependencies": {
+        "elementtree": {
+          "version": "0.1.6",
+          "from": "elementtree@^0.1.6",
+          "resolved": "https://registry.npmjs.org/elementtree/-/elementtree-0.1.6.tgz",
+          "dependencies": {
+            "sax": {
+              "version": "0.3.5",
+              "from": "sax@0.3.5",
+              "resolved": "https://registry.npmjs.org/sax/-/sax-0.3.5.tgz"
+            }
+          }
+        },
+        "inflect": {
+          "version": "0.3.0",
+          "from": "inflect@^0.3.0",
+          "resolved": "https://registry.npmjs.org/inflect/-/inflect-0.3.0.tgz"
+        }
+      }
+    },
     "ejs-locals": {
       "version": "1.0.2",
       "from": "ejs-locals@",
@@ -93,6 +117,42 @@
           "version": "0.8.8",
           "from": "ejs@0.8.x",
           "resolved": "https://registry.npmjs.org/ejs/-/ejs-0.8.8.tgz"
+        }
+      }
+    },
+    "errorhandler": {
+      "version": "1.3.2",
+      "from": "errorhandler@",
+      "resolved": "https://registry.npmjs.org/errorhandler/-/errorhandler-1.3.2.tgz",
+      "dependencies": {
+        "accepts": {
+          "version": "1.2.2",
+          "from": "accepts@~1.2.2",
+          "resolved": "https://registry.npmjs.org/accepts/-/accepts-1.2.2.tgz",
+          "dependencies": {
+            "mime-types": {
+              "version": "2.0.7",
+              "from": "mime-types@~2.0.7",
+              "resolved": "https://registry.npmjs.org/mime-types/-/mime-types-2.0.7.tgz",
+              "dependencies": {
+                "mime-db": {
+                  "version": "1.5.0",
+                  "from": "mime-db@~1.5.0",
+                  "resolved": "https://registry.npmjs.org/mime-db/-/mime-db-1.5.0.tgz"
+                }
+              }
+            },
+            "negotiator": {
+              "version": "0.5.0",
+              "from": "negotiator@0.5.0",
+              "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.5.0.tgz"
+            }
+          }
+        },
+        "escape-html": {
+          "version": "1.0.1",
+          "from": "escape-html@1.0.1",
+          "resolved": "https://registry.npmjs.org/escape-html/-/escape-html-1.0.1.tgz"
         }
       }
     },
