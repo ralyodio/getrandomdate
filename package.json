@@ -1,7 +1,7 @@
 {
   "name": "random-date",
   "version": "1.0.6",
-  "description": "Outputs a random date within a range.",
+  "description": "Get a random date for a given time-frame in JSON, XML, or CSV format.",
   "main": "server/index.js",
   "scripts": {
     "test": "gulp test"
